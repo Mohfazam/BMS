@@ -4,6 +4,12 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  },
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "prisma": "^6.11.1"
+  }
 }
