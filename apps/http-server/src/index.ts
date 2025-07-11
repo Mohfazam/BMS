@@ -10,11 +10,11 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    client.user.create({
+    const user = await client.user.create({
         data: {
             username: username,
             password: password
@@ -22,7 +22,8 @@ app.post("/signup", (req, res) => {
     });
 
     res.status(200).json({
-        Message: "Signup Successfull"
+        Message: "Signup Successfull",
+        id: user.id
     });
 });
 
