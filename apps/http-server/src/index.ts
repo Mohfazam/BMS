@@ -13,6 +13,17 @@ app.get("/", (req, res) => {
 app.post("/signup", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
+
+    client.user.create({
+        data: {
+            username: username,
+            password: password
+        }
+    });
+
+    res.status(200).json({
+        Message: "Signup Successfull"
+    });
 });
 
 
